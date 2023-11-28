@@ -1,4 +1,4 @@
-package com.example.spring_learn.exceptions;
+package com.example.springlearn.exceptions;
 
 public class PersonIsAlreadyExistException extends RuntimeException {
     public PersonIsAlreadyExistException(String message) {

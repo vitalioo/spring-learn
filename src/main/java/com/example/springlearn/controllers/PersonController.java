@@ -1,6 +1,6 @@
-package com.example.spring_learn.controllers;
+package com.example.springlearn.controllers;
 
-import com.example.spring_learn.service.PersonService;
+import com.example.springlearn.service.PersonService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

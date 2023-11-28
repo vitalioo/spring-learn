@@ -1,4 +1,4 @@
-package com.example.spring_learn.entity;
+package com.example.springlearn.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
