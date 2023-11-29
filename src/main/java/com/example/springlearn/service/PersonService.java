@@ -2,7 +2,6 @@ package com.example.springlearn.service;
 
 import com.example.springlearn.entity.Person;
 import com.example.springlearn.repositories.PersonRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,9 +10,12 @@ import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
-@RequiredArgsConstructor
 public class PersonService {
     private final PersonRepository personRepository;
+
+    public PersonService(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
 
     public List<Person> findAll() {
         return personRepository.findAll();
@@ -33,5 +35,10 @@ public class PersonService {
     public void update(int id, Person person) {
         person.setId(id);
         personRepository.save(person);
+    }
+
+    @Transactional
+    public void delete(int id) {
+        personRepository.deleteById(id);
     }
 }
