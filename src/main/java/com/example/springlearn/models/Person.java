@@ -1,4 +1,4 @@
-package com.example.springlearn.entity;
+package com.example.springlearn.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -35,4 +35,6 @@ public class Person {
     @Column(name = "name")
     private String name;
 
+    @Enumerated(EnumType.STRING)
+    private Mood mood;
 }
