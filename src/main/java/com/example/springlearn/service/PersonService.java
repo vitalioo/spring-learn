@@ -1,6 +1,7 @@
 package com.example.springlearn.service;
 
-import com.example.springlearn.entity.Person;
+import com.example.springlearn.models.Mood;
+import com.example.springlearn.models.Person;
 import com.example.springlearn.repositories.PersonRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +29,7 @@ public class PersonService {
 
     @Transactional
     public void save(Person person) {
+        person.setMood(Mood.valueOf("CALM"));
         personRepository.save(person);
     }
 
@@ -40,5 +42,13 @@ public class PersonService {
     @Transactional
     public void delete(int id) {
         personRepository.deleteById(id);
+    }
+
+    public List<Person> findByNameOrderByAge(String name) {
+        return personRepository.findByNameOrderByAge(name);
+    }
+
+    public List<Person> findByEmail(String email) {
+        return personRepository.findByEmail(email);
     }
 }
