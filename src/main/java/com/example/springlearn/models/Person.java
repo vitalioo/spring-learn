@@ -35,6 +35,9 @@ public class Person {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "password")
+    private String password;
+
     @Enumerated(EnumType.STRING)
     private Mood mood;
 }
