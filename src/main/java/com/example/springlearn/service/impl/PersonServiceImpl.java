@@ -15,7 +15,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class PersonServiceImpl implements PersonService {
-
     private final PersonRepository personRepository;
 
     @Override

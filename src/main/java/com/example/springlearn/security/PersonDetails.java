@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 
 public class PersonDetails implements UserDetails {
-    private Person person;
+    private final Person person;
 
     public PersonDetails(Person person) {
         this.person = person;
@@ -46,5 +46,9 @@ public class PersonDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public Person getPerson() {
+        return this.person;
     }
 }
